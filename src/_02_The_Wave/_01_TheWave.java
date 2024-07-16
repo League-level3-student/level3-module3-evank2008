@@ -18,9 +18,21 @@ public class _01_TheWave {
      * 2. If the character in the string is whitespace then pass over it as
      *    if it was an empty seat.
      */
-    
+    //i value for each letter
+	//each time check if letter is space
+	//if space, end
+	//else add to array the word w capitalized letter
+	//then return the array
     public static ArrayList<String> wave(String str) {
-        
-        return null;
+        StringBuilder chars = new StringBuilder(str);
+        ArrayList<String> strings = new ArrayList<String>();;
+        for(int i = 0; i<chars.toString().length();i++) {
+        	if(chars.charAt(i)!=' ') {
+        		chars.replace(i, i+1, Character.toString(Character.toUpperCase(chars.charAt(i))));
+        		strings.add(chars.toString());
+        		chars.replace(i, i+1, Character.toString(Character.toLowerCase(chars.charAt(i))));
+        	}
+        }
+        return strings;
     }
 }
